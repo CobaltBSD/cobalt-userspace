@@ -1,0 +1,3 @@
+#!/usr/bin/zsh
+
+/usr/sbin/agetty --show-issue

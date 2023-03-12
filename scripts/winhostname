@@ -1,0 +1,7 @@
+#!/usr/bin/zsh
+
+# Set the hostname Windows-style.
+
+HOSTNAME="Desktop-$(head -n3 /dev/urandom | tr -cd '0-9A-Z' | cut -c -7)"
+hostname $HOSTNAME
+echo "Generated Windows hostname: $HOSTNAME"

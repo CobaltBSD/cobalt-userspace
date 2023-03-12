@@ -1,0 +1,78 @@
+1.1 - March 12, 2023
+* Added weather script
+* Separated cobalt-sysconf into its own package
+* Reformed cobalt_userspace_daemon into cobalt-luajit-userspace, as a separate
+package
+* Added sdwdate, inspired by the Kicksecure script of the same name
+* Switched all scripts from bash or 'sh' to zsh
+* Removed gencobalt, gettime, mkcobaltiso, pkg, vpnchain, vpnchain_helper.sh,
+anonsurf
+* Updated sethostname into winhostname, which strictly spoofs ones hostname to
+mimick Windows.
+
+1.0 - March 4, 2023
+* Combined cobalt-sysconf, cobalt_userspace_daemon, AnonScripts, gettime,
+greeting, pkg, and profile.d-xdg-conf into one cobalt-userspace package
+* Removed /etc/inittab
+* Replaced /etc/issue with one that has more vibrant colors and less ugly
+ASCII art
+* Reformatted /etc/fstab
+* Added /etc/fstab mount entry for cgroup
+* Added noexec option to /tmp mount in /etc/fstab
+* Pruned several useless groups for /etc/group
+* Added syslog and uuidd users to /etc/passwd
+* Replaced /usr/bin/bash and /usr/bin/ash in /etc/shells with /usr/bin/zsh
+* Added rot13 alias to /etc/profile
+* Changed /etc/profile shebang to /usr/bin/zsh
+* Added XDG_RUNTIME_DIR, XDG_DATA_DIRS and XDG_CONFIG_DIRS variables to
+/etc/profile for labwc and other graphical programs
+* Set HISTSIZE variable to 1000
+* Switched the Cobalt Userspace Daemon from Luau to LuaJIT with Fennel
+* Completely rewrote pkg
+
+[cobalt-sysconf]
+1.1 - Dec. 21, 2022
+* Renamed from profile-conf to cobalt-sysconf
+* /etc/profile: /usr/sbin is now only on the path as root
+* /etc/profile: Fixed package-controlled shell colors
+* Added resolv.conf, issue, inittab, lsb-release, shells, hostname, fstab,
+group, passwd, localtime
+* /etc/issue: Rewrote and added ASCII art
+
+1.0 - Dec. 10, 2022
+* Initial release
+
+[AnonSurf]
+1.0 - Dec. 6, 2022
+* Initial release of anonsurf, sethostname, vpnchain, pandora
+
+[greeting]
+1.2 - Feb 7, 2023
+* Changed `agetty` to `/usr/sbin/agetty`, to allow working with non-root users
+
+1.1 - Jan 15, 2023
+* Fixed issue variables not expanding
+
+1.0 - Jan 2, 2023
+* Initial release
+
+[profile.d-xdg-conf]
+1.0 - Dec. 10, 2022
+* Initial release
+
+[gettime]
+1.0 - Dec. 16, 2022
+* Initial release
+
+[cobalt_userspace_daemon]
+alpha1 - Feb. 6, 2023
+* Initial pre-release
+
+[pkg]
+1.1 - Nov. 21, 2022
+* Removed dependency on Perl and Gawk
+* Fundamentals of dependency checking
+* Countless other minor improvements/fixes
+
+1.0 - Nov. 19, 2022
+* Initial release

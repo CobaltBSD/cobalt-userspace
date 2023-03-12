@@ -1,0 +1,26 @@
+#!/usr/bin/zsh
+
+# This is a Cobalt-specific simplistic reimplementation of Kicksecure's sdwdate, in the form of a shell script.
+# Cobalt sdwdate will randomly select 3 websites to fetch the date from over Tor, and set the system clock to the average of all three dates.
+# Unlike regular sdwdate, this script runs over Tor, but connects to clearnet websites.
+
+# TODO: use curl over tor, choose several servers randomly from sdwdate.servers
+
+CURL_DATE=($(curl -v "https://gnu.org" 2>&1 | tr '[:upper:]' '[:lower:]' | grep "< date")) # tr ... is to ensure that the date field is always lowercase (it sometimes isn't)
+case ${CURL_DATE[4]} in
+	jan) MONTH=01;;
+	feb) MONTH=02;;
+	mar) MONTH=03;;
+	apr) MONTH=04;;
+	may) MONTH=05;;
+	jun) MONTH=06;;
+	jul) MONTH=07;;
+	aug) MONTH=08;;
+	sep) MONTH=09;;
+	oct) MONTH=10;;
+	nov) MONTH=11;;
+	dec) MONTH=12;;
+esac
+CURL_DATE="${CURL_DATE[5]}-$MONTH-${CURL_DATE[3]} ${CURL_DATE[6]}"
+
+date -u -s "$CURL_DATE"

@@ -1,0 +1,21 @@
+#!/usr/bin/zsh
+
+echo -e \
+	" FOREGROUND\n" \
+	"\e[0;30mDARK GRAY\n" \
+	"\e[0;31mLIGHT RED\n" \
+	"\e[0;32mLIGHT GREEN\n" \
+	"\e[0;33mYELLOW\n" \
+	"\e[0;34mLIGHT BLUE\n" \
+	"\e[0;35mLIGHT PURPLE\n" \
+	"\e[0;36mLIGHT CYAN\n" \
+	"\e[0;37mWHITE\n" \
+	"BACKGROUND\n" \
+	"\e[0;40mDARK GRAY\e[0m\n" \
+	"\e[0;41mLIGHT RED\e[0m\n" \
+	"\e[0;42mLIGHT GREEN\e[0m\n" \
+	"\e[0;43mYELLOW\e[0m\n" \
+	"\e[0;44mLIGHT BLUE\e[0m\n" \
+	"\e[0;45mLIGHT PURPLE\e[0m\n" \
+	"\e[0;46mLIGHT CYAN\e[0m\n" \
+	"\e[0;47mWHITE\e[0m" \

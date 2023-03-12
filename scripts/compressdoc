@@ -1,0 +1,17 @@
+#!/usr/bin/zsh
+
+# TODO: compress as gz or zstd
+
+# Compress man pages as .xz
+
+MANPAGES=$(find /usr/share/man -name "*.[1-8]")
+
+for PAGE in $MANPAGES; do
+	if [[ -h $PAGE ]]; then
+		SYMLINK=$(readlink $PAGE)
+		rm -v $PAGE
+		ln -sv $SYMLINK.xz $PAGE.xz
+	else
+		xz $PAGE
+	fi
+done

@@ -1,0 +1,18 @@
+#!/usr/bin/zsh
+
+# Based off of ParrotSec's `pandora`
+
+echo "Clearing RAM in 5s..."
+sleep 5
+
+echo "Dropping caches"
+echo 1024 > /proc/sys/vm/min_free_kbytes
+echo 3  > /proc/sys/vm/drop_caches
+echo 1  > /proc/sys/vm/oom_kill_allocating_task
+echo 1  > /proc/sys/vm/overcommit_memory
+echo 0  > /proc/sys/vm/oom_dump_tasks
+
+echo "Nuking RAM"
+sdmem -fllv
+
+echo "Finished."

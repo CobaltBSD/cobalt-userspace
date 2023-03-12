@@ -1,0 +1,15 @@
+#!/usr/bin/zsh
+
+# Decompress normal man pages from .xz # TODO: gz/zstd?
+
+MANPAGES=$(find /usr/share/man -name "*.[1-8].xz")
+
+for PAGE in $MANPAGES; do
+	if [[ -h $PAGE ]]; then
+		SYMLINK=$(readlink $PAGE)
+		rm -v $PAGE
+		ln -sv ${SYMLINK%.*} ${PAGE%.*}
+	else
+		xz -d $PAGE
+	fi
+done
