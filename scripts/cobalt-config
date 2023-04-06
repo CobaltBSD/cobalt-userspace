@@ -1,0 +1,11 @@
+#!/usr/bin/zsh
+
+USERLAND_VERSION='1.2'
+KERNEL_VERSION=$(uname -r)
+
+echo "Userland version: $USERLAND_VERSION"
+echo "Kernel version: $KERNEL_VERSION"
+
+progname=${0##*/} # XXX
+
+# TODO: support system configurations (i.e. size-optimized vs performance optimized)

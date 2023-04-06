@@ -1,2 +1,2 @@
 # cobalt-userspace
-Various miscellaneous scripts and programs that are specific to Cobalt
+Various miscellaneous scripts that are specific to Cobalt
