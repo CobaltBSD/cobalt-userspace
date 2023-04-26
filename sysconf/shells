@@ -1,0 +1,5 @@
+# Begin /etc/shells
+
+/usr/bin/zsh
+
+# End /etc/shells
