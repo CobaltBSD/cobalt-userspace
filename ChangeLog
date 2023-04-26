@@ -1,5 +1,4 @@
 1.3 - Apr 14 2023
-* Re-introduced and completely overhauled `pkg`
 * Began a script to simplify thumbnailing various file types
 * Merged cobalt-luajit-userspace and cobalt-sysconf packages with
 cobalt-userspace
